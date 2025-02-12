@@ -9,11 +9,25 @@ find_package(pybind11 CONFIG REQUIRED)
 set(LIBA_SOURCES liba/src/a.cxx)
 set(PYA_SOURCES pya/pya.cxx)
 set(LIBA_HEADERS liba/include)
+set(LIBA_HEADERS_INSTALL liba/include/a)
 
-add_library(liba SHARED ${LIBA_SOURCES})
-target_include_directories(liba PRIVATE ${LIBA_HEADERS})
+add_library(a SHARED ${LIBA_SOURCES})
+target_include_directories(a PRIVATE ${LIBA_HEADERS})
+
+# install shared libraries into virtual environment lib directory
+# need to tell python where this is at runtime
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/lib
+install(TARGETS a DESTINATION ${SKBUILD_DATA_DIR}/lib)
+
+# install headers
+# these get installed into virtual environment include directory
+# need to tell compiler where this is
+# export CPATH=$CPATH:$VIRTUAL_ENV/include
+install(DIRECTORY ${LIBA_HEADERS_INSTALL} DESTINATION ${SKBUILD_DATA_DIR}/include)
 
 pybind11_add_module(_a ${PYA_SOURCES})
 target_include_directories(_a PRIVATE ${LIBA_HEADERS})
-target_link_libraries(_a PRIVATE liba)
-install(TARGETS _a DESTINATION .)
+target_link_libraries(_a PRIVATE a)
+
+# install the bindings in site_packages/project_name
+install(TARGETS _a DESTINATION ${SKBUILD_PROJECT_NAME})

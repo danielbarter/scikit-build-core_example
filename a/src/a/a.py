@@ -1,3 +1,3 @@
-import _a
+import a._a
 
-assert 6 == _a.a(3)
+assert 6 == a._a.a(3)
