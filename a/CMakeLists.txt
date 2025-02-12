@@ -13,18 +13,19 @@ else()
   set(CMAKE_CONFIG_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}}/cmake)
 endif()
 
-# prints out all the variables.
-# useful for debugging
-# get_cmake_property(VAR_LIST VARIABLES)
-# foreach(var ${VAR_LIST})
-#   message(STATUS "${var} = ${${var}}")
-# endforeach()
 
 set(CMAKE_CXX_STANDARD 17)
 
 set(PYBIND11_FINDPYTHON ON)
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 find_package(pybind11 CONFIG REQUIRED)
+
+# prints out all the variables.
+# useful for debugging
+# get_cmake_property(VAR_LIST VARIABLES)
+# foreach(var ${VAR_LIST})
+#   message(STATUS "${var} = ${${var}}")
+# endforeach()
 
 set(LIBA_SOURCES liba/src/a.cxx)
 set(PYA_SOURCES pya/pya.cxx)
