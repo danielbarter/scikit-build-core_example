@@ -21,8 +21,6 @@ install(TARGETS a DESTINATION ${SKBUILD_DATA_DIR}/lib)
 
 # install headers
 # these get installed into virtual environment include directory
-# need to tell compiler where this is
-# export CPATH=$CPATH:$VIRTUAL_ENV/include
 install(DIRECTORY ${LIBA_HEADERS_INSTALL} DESTINATION ${SKBUILD_DATA_DIR}/include)
 
 pybind11_add_module(_a ${PYA_SOURCES})
@@ -31,3 +29,6 @@ target_link_libraries(_a PRIVATE a)
 
 # install the bindings in site_packages/project_name
 install(TARGETS _a DESTINATION ${SKBUILD_PROJECT_NAME})
+
+# install config.make file into virtual environment cmake directory
+install(FILES a-config.cmake DESTINATION ${SKBUILD_DATA_DIR}/cmake)
