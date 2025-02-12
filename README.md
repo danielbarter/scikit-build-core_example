@@ -3,8 +3,8 @@ This is a demo for using scikit-build-core, cmake and python virtual environment
 usage:
 
 1. create and activate a virtual environment.
-2. export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/lib
-3. export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$VIRTUAL_ENV/cmake 
+2. export `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/lib`
+3. export `CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$VIRTUAL_ENV/cmake`
 4. pip install pybind11 and scikit-build-core
 5. move into project a and pip install .
 6. check that python -c 'import a.a' works
