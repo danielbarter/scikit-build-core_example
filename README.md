@@ -22,7 +22,8 @@ export `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/lib`
 export `CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$VIRTUAL_ENV/cmake`
 
 
-This lets cmake find our pip install pybind. This isn't required if you have a system pybind11 installed.export pybind11_DIR=$VIRTUAL_ENV/lib/python*/site-packages/pybind11/share/cmake/pybind11.
+This lets cmake find our pip install pybind. This isn't required if you have a system pybind11 installed
+export pybind11_DIR=$VIRTUAL_ENV/lib/python*/site-packages/pybind11/share/cmake/pybind11.
 ```
 
 4. move into project a and pip install .
