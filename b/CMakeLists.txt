@@ -3,10 +3,12 @@ project(b)
 
 find_package(a CONFIG REQUIRED)
 
-get_cmake_property(VAR_LIST VARIABLES)
-foreach(var ${VAR_LIST})
-  message(STATUS "${var} = ${${var}}")
-endforeach()
+# prints out all the variables.
+# useful for debugging
+# get_cmake_property(VAR_LIST VARIABLES)
+# foreach(var ${VAR_LIST})
+#   message(STATUS "${var} = ${${var}}")
+# endforeach()
 
 set(CMAKE_CXX_STANDARD 17)
 

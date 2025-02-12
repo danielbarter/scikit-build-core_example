@@ -31,4 +31,8 @@ target_link_libraries(_a PRIVATE a)
 install(TARGETS _a DESTINATION ${SKBUILD_PROJECT_NAME})
 
 # install config.make file into virtual environment cmake directory
+# the file is empty, but importing it populates a_DIR, which points to
+# the cmake file. from there we can get the headers and libraries
+# in adjacent projects
+# export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$VIRTUAL_ENV/cmake
 install(FILES a-config.cmake DESTINATION ${SKBUILD_DATA_DIR}/cmake)
