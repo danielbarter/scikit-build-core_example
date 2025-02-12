@@ -1,2 +1,1 @@
-set(a_INCLUDE_DIRS ${SKBUILD_DATA_DIR}/include)
-set(a_LIBRARIES ${SKBUILD_DATA_DIR}/lib)
+
