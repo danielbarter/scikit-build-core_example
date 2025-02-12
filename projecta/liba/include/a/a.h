@@ -1,0 +1,3 @@
+double a(double x);
+
+
