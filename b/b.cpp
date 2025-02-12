@@ -2,5 +2,5 @@
 #include <iostream>
 
 int main(){
-  std::cout << a(4);
+  std::cout << a(4) << "\n";
 }
