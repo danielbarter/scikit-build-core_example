@@ -15,11 +15,11 @@ usage:
 ```
 
 # This lets python find shared libraries we install into the virtual environment.
-export `LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/lib` 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$VIRTUAL_ENV/lib 
 
 
 # This lets python find cmake packages we install into the virtual environment.
-export `CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$VIRTUAL_ENV/cmake`
+export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$VIRTUAL_ENV/cmake
 
 
 This lets cmake find our pip install pybind. This isn't required if you have a system pybind11 installed
